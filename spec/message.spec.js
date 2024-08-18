@@ -13,7 +13,7 @@ describe("Message class", function() {
     test("constructor sets name", function() {
         let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
         let message = new Message('Test message with two commands', commands);
-        expect(message.name).toBe('Test message with two commands');
+        expect(message.name).toEqual('Test message with two commands');
     });
 //Test 6
     test("contains a commands array passed into the constructor as the 2nd argument", function() {

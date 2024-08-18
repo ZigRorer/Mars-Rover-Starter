@@ -22,7 +22,7 @@ describe("Rover class", function() {
     let message = new Message('Status check command', commands);
     let rover = new Rover(87382098);
     let response = rover.receiveMessage(message);
-    expect(response.message).toBe('Status check command');
+    expect(response.message).toEqual('Status check command');
   });
 //Test 9
   test("response returned by receiveMessage includes two results if two commands are sent in the message", function() {
@@ -72,7 +72,7 @@ describe("Rover class", function() {
 //Test 13
   test("responds with the position for the move command", function(){
     let commands = [new Command('MOVE', 1000)];
-    let message = new Message('Test move command', commands);
+    let message = new Message('Position for move command', commands);
     let rover = new Rover(87382098);
     let response = rover.receiveMessage(message);
     expect({ completed: response.results[0].completed, position: rover.position}).toEqual({
